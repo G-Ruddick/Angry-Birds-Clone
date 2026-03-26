@@ -31,8 +31,7 @@ Transform:
   m_LocalPosition: {x: 0.008080182, y: -0.0666666, z: 0}
   m_LocalScale: {x: 0.36036032, y: 5.931354, z: 0.85499305}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3061544422388546263}
+  m_Children: []
   m_Father: {fileID: 1923636839273780669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &277278863064023809
@@ -121,6 +120,7 @@ GameObject:
   - component: {fileID: 3679478739743737270}
   - component: {fileID: 4770027978934241258}
   - component: {fileID: 2827605647202592702}
+  - component: {fileID: 1057559912379566709}
   m_Layer: 0
   m_Name: Cannon Stand
   m_TagString: Untagged
@@ -218,77 +218,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &781312203949480938
-PrefabInstance:
+--- !u!114 &1057559912379566709
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 4147292537246363598}
-    m_Modifications:
-    - target: {fileID: 2334499903004366453, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_Name
-      value: Cannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6016146
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5619852
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.67723155
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.60132426
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
---- !u!4 &3061544422388546263 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2353989666280710461, guid: e4afba82016aef24eace5ce5d2ee3d8a, type: 3}
-  m_PrefabInstance: {fileID: 781312203949480938}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832254326782215267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa9becfeb69a14468d280ecf2a62c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannon: {fileID: 0}
