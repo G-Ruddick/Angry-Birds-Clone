@@ -7,12 +7,17 @@ public class Enemy : MonoBehaviour
     public LayerMask cannonball;
     public LayerMask rocket;
     public LayerMask ground;
+    
+    public EnemyManager enemyManager;
 
-    void Start()
+    void Awake()
     {
         cannonball = LayerMask.GetMask("cannonball");
         rocket = LayerMask.GetMask("rocket");
         ground = LayerMask.GetMask("Ground");
+
+        enemyManager = GameObject.Find("Enemy Manager").GetComponent<EnemyManager>();
+        enemyManager.NumofEnemies++;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -35,7 +40,8 @@ public class Enemy : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Destroy(this.gameObject, .01f);
+            Destroy(this.gameObject);
+            enemyManager.NumofEnemies--;
         }
     }
 }

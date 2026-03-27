@@ -13,8 +13,8 @@ public class CannonFire : MonoBehaviour {
     public Vector3 direction;
     public float angle;
 
-    int projectilesUsed;
-    int numOfProjectiles;
+    public int projectilesUsed;
+    public int numOfProjectiles;
 
     void Awake() {
         camera = GameObject.Find("Main Camera").GetComponent<Camera>();
