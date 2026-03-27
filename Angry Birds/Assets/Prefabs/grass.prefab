@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8892403149547106239}
   - component: {fileID: 6961069155674937731}
   - component: {fileID: 3634604305176303805}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 2249960521745927777}
   - component: {fileID: 4985773121883341088}
   - component: {fileID: 4672647934713473142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}

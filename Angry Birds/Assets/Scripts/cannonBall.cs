@@ -1,16 +1,28 @@
 using UnityEngine;
 
-public class cannonBall : MonoBehaviour
+public class CannonBall : MonoBehaviour
 {
-    public Rigidbody rb;
+    public float Damage = 2;
 
-    void Start() {
-        rb = GetComponent<Rigidbody>();
+    public LayerMask Ground;
+    public LayerMask Enemy;
 
-        FireProjectile();
+    void Start()
+    {
+        Ground = LayerMask.GetMask("Ground");
+        Enemy = LayerMask.GetMask("Target");
     }
 
-    void FireProjectile() {
-        rb.AddForce(Vector3.up * 30, ForceMode.Impulse);
+    void OnCollisionEnter(Collision collision)
+    {
+       if (((1 << collision.gameObject.layer) & Ground) != 0)
+        {
+            Damage = 1;
+            Destroy(this.gameObject, 5f);
+        }
+        if (((1 << collision.gameObject.layer) & Ground) != 0)
+        {
+            Destroy(this.gameObject, 5f);
+        }
     }
 }
