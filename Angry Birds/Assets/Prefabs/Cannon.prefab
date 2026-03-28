@@ -330,9 +330,11 @@ MonoBehaviour:
   cannon: {fileID: 2631575134465090749}
   camera: {fileID: 0}
   projectileManager: {fileID: 0}
+  projDisplay: {fileID: 0}
   cannonBall: {fileID: 6820961261483905857, guid: 413caebd80785e44c8daa6c02b91abd8, type: 3}
   rocket: {fileID: 8207263811343271980, guid: ffa1b714e14a30e4985c4a60db4c03f0, type: 3}
   currentProjectile: {fileID: 0}
+  PathMarker: {fileID: 1830811567295051902, guid: 8d5c0957447992e4683908a1a4f43d31, type: 3}
   mousePosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   angle: 0

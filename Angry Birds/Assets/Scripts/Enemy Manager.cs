@@ -18,7 +18,7 @@ public class EnemyManager : MonoBehaviour
 
     void Update () {
         if (NumofEnemies == 0) {
-            winLoseScreen.WinScreen.SetActive(true);
+            StartCoroutine(winScreen());
         }
         else {
             if (cannonFire.projectilesUsed == projectileManager.projectiles.Length) {
@@ -32,5 +32,10 @@ public class EnemyManager : MonoBehaviour
         if (NumofEnemies != 0) {
             winLoseScreen.LoseScreen.SetActive(true);
         }
+    }
+
+    IEnumerator winScreen() {
+        yield return new WaitForSeconds(2f);
+        winLoseScreen.WinScreen.SetActive(true);
     }
 }

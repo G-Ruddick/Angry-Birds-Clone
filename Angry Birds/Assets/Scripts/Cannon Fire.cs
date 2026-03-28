@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CannonFire : MonoBehaviour {
     public GameObject cannon;
@@ -9,6 +10,7 @@ public class CannonFire : MonoBehaviour {
     public GameObject cannonBall;
     public GameObject rocket;
     public GameObject currentProjectile;
+    public GameObject PathMarker;
 
     public Vector3 mousePosition;
     public Vector3 direction;
@@ -24,6 +26,8 @@ public class CannonFire : MonoBehaviour {
 
         projectilesUsed = 0;
         numOfProjectiles = projectileManager.projectiles.Length;
+
+        StartCoroutine(projectilePath());
     }
 
     void FixedUpdate() {
@@ -59,8 +63,20 @@ public class CannonFire : MonoBehaviour {
 
     void fireCannon() {
         GameObject projectile = Instantiate(currentProjectile, cannon.transform.position, cannon.transform.rotation);
-        projectile.GetComponent<Rigidbody>().AddForce(5f * direction, ForceMode.Impulse);
+        projectile.GetComponent<Rigidbody>().AddForce(direction, ForceMode.VelocityChange);
+    }
 
+    IEnumerator projectilePath()
+    {
+        while (true)
+        {
+            Vector3 oldDirection = direction;
+            GameObject marker = Instantiate(PathMarker, cannon.transform.position, cannon.transform.rotation);
+            marker.GetComponent<Rigidbody>().AddForce(direction, ForceMode.VelocityChange);
+            
+            Destroy(marker, 1f);
 
+            yield return new WaitForSeconds(.15f);
+        }
     }
 }
