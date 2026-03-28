@@ -4,6 +4,7 @@ public class CannonFire : MonoBehaviour {
     public GameObject cannon;
     public Camera camera;
     public ProjectileManager projectileManager;
+    public ProjectileDisplay projDisplay;
 
     public GameObject cannonBall;
     public GameObject rocket;
@@ -19,6 +20,7 @@ public class CannonFire : MonoBehaviour {
     void Awake() {
         camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         projectileManager = GameObject.Find("Projectile Manager").GetComponent<ProjectileManager>();
+        projDisplay = GameObject.Find("Projectiles").GetComponent<ProjectileDisplay>();
 
         projectilesUsed = 0;
         numOfProjectiles = projectileManager.projectiles.Length;
@@ -46,6 +48,10 @@ public class CannonFire : MonoBehaviour {
 
             if (Input.GetMouseButtonDown(0)) {
                 fireCannon();
+                
+                Destroy(projDisplay.proj[projectilesUsed]);
+                projDisplay.transform.position -= new Vector3(40, 0 ,0);
+
                 projectilesUsed++;
             }  
         }

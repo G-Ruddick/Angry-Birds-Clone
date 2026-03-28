@@ -1157,6 +1157,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 602990456}
   - {fileID: 1815489218}
   - {fileID: 887020761}
   m_Father: {fileID: 0}
@@ -1180,6 +1181,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WinScreen: {fileID: 887020760}
   LoseScreen: {fileID: 1815489217}
+--- !u!1 &602990455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 602990456}
+  - component: {fileID: 602990457}
+  m_Layer: 5
+  m_Name: Projectiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &602990456
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602990455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 589462158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -75}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &602990457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602990455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f7a1e22882137488714d4218e5d97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileManager: {fileID: 0}
+  RocketPNG: {fileID: 5248685427069568071, guid: 6e8ca53196d2dc3449395cfda3238e82, type: 3}
+  CannonBallPNG: {fileID: 1369666952904760870, guid: f52722dac064b914794a75e4a81c477c, type: 3}
+  proj: []
 --- !u!1001 &626395775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1415,6 +1468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumofEnemies: 0
   winLoseScreen: {fileID: 0}
+  projectileManager: {fileID: 0}
+  cannonFire: {fileID: 0}
 --- !u!1001 &739909551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1824,6 +1879,7 @@ GameObject:
   - component: {fileID: 960661655}
   - component: {fileID: 960661654}
   - component: {fileID: 960661653}
+  - component: {fileID: 960661656}
   m_Layer: 5
   m_Name: Try Again Button
   m_TagString: Untagged
@@ -1894,7 +1950,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 960661654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 960661656}
+        m_TargetAssemblyTypeName: RestartLevel, Assembly-CSharp
+        m_MethodName: restartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &960661654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,6 +2001,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960661651}
   m_CullTransparentMesh: 1
+--- !u!114 &960661656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960661651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac9cc90331488447bf26e1952199851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &999945010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5367180941638407801, guid: f96ad1c569501df42b2972e01b37955c, type: 3}
@@ -3233,6 +3313,7 @@ GameObject:
   - component: {fileID: 1701166631}
   - component: {fileID: 1701166630}
   - component: {fileID: 1701166629}
+  - component: {fileID: 1701166632}
   m_Layer: 5
   m_Name: Try Again Button
   m_TagString: Untagged
@@ -3303,7 +3384,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1701166630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1701166632}
+        m_TargetAssemblyTypeName: RestartLevel, Assembly-CSharp
+        m_MethodName: restartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1701166630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3342,6 +3435,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701166627}
   m_CullTransparentMesh: 1
+--- !u!114 &1701166632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701166627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac9cc90331488447bf26e1952199851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1737219450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5367180941638407801, guid: 62a00e17615d2cf4b8474b502be3f159, type: 3}
