@@ -156,3 +156,4 @@ MonoBehaviour:
   rocket:
     serializedVersion: 2
     m_Bits: 0
+  hit: {fileID: 8300000, guid: 914af4d89f9d1954ab7f891ca4868e14, type: 3}

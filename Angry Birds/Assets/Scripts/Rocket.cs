@@ -8,6 +8,7 @@ public class Rocket : MonoBehaviour
     public LayerMask Enemy;
 
     public GameObject explosionRadius;
+    public AudioClip explosion;
 
     void Start()
     {
@@ -15,12 +16,12 @@ public class Rocket : MonoBehaviour
         Enemy = LayerMask.GetMask("Target");
 
         explosionRadius.SetActive(false);
-
     }
 
     void OnCollisionEnter(Collision collision)
     {
         explosionRadius.SetActive(true);
+        AudioSource.PlayClipAtPoint(explosion, new Vector3(0, 0, 0));
 
         if (((1 << collision.gameObject.layer) & Ground) != 0)
         {

@@ -7,6 +7,8 @@ public class Brick : MonoBehaviour
     public LayerMask cannonball;
     public LayerMask rocket;
 
+    public AudioClip hit;
+
     void Start()
     {
         cannonball = LayerMask.GetMask("cannonball");
@@ -18,10 +20,12 @@ public class Brick : MonoBehaviour
         if (((1 << collision.gameObject.layer) & cannonball) != 0)
         {
             Health -= collision.gameObject.GetComponent<CannonBall>().Damage;
+            AudioSource.PlayClipAtPoint(hit, new Vector3(0, 0, 0));
         }
         if (((1 << collision.gameObject.layer) & rocket) != 0)
         {
             Health -= collision.gameObject.GetComponent<Rocket>().Damage;
+            AudioSource.PlayClipAtPoint(hit, new Vector3(0, 0, 0));
         }
     }
 
