@@ -23,12 +23,12 @@ public class Brick : MonoBehaviour
         if (((1 << collision.gameObject.layer) & cannonball) != 0)
         {
             Health -= collision.gameObject.GetComponent<CannonBall>().Damage;
-            AudioSource.PlayClipAtPoint(hit, cameraPos.position, .5f);
+            AudioSource.PlayClipAtPoint(hit, cameraPos.position, PauseMenu.sfxVolume * .5f);
         }
         if (((1 << collision.gameObject.layer) & rocket) != 0)
         {
             Health -= collision.gameObject.GetComponent<Rocket>().Damage;
-            AudioSource.PlayClipAtPoint(hit, cameraPos.position, .5f);
+            AudioSource.PlayClipAtPoint(hit, cameraPos.position, PauseMenu.sfxVolume * .5f);
         }
     }
 

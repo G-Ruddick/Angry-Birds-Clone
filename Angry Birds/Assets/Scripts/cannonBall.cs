@@ -6,11 +6,14 @@ public class CannonBall : MonoBehaviour
 
     public LayerMask Ground;
     public LayerMask Enemy;
+    public AudioSource cannonFireSFX;
 
-    void Start()
+    void Awake()
     {
         Ground = LayerMask.GetMask("Ground");
         Enemy = LayerMask.GetMask("Target");
+        cannonFireSFX = GetComponent<AudioSource>();
+        cannonFireSFX.volume = PauseMenu.sfxVolume * 0.354f;
     }
 
     void OnCollisionEnter(Collision collision)
