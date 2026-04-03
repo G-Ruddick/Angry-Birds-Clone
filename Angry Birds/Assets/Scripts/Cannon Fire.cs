@@ -50,7 +50,7 @@ public class CannonFire : MonoBehaviour {
                 currentProjectile = cannonBall;        
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) && !PauseMenu.gamePause) {
                 fireCannon();
                 
                 Destroy(projDisplay.proj[projectilesUsed]);

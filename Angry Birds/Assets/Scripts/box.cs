@@ -9,10 +9,13 @@ public class box : MonoBehaviour
 
     public AudioClip hit;
 
+    public Transform cameraPos;
+
     void Start()
     {
         cannonball = LayerMask.GetMask("cannonball");
         rocket = LayerMask.GetMask("rocket");
+        cameraPos = GameObject.Find("Main Camera").GetComponent<Transform>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -20,12 +23,12 @@ public class box : MonoBehaviour
         if (((1 << collision.gameObject.layer) & cannonball) != 0)
         {
             Health -= collision.gameObject.GetComponent<CannonBall>().Damage;
-            AudioSource.PlayClipAtPoint(hit, new Vector3(0, 0, 0));
+            AudioSource.PlayClipAtPoint(hit, cameraPos.position, .4f);
         }
         if (((1 << collision.gameObject.layer) & rocket) != 0)
         {
             Health -= collision.gameObject.GetComponent<Rocket>().Damage;
-            AudioSource.PlayClipAtPoint(hit, new Vector3(0, 0, 0));
+            AudioSource.PlayClipAtPoint(hit, cameraPos.position, .4f);
         }
     }
 

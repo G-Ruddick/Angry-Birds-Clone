@@ -156,4 +156,4 @@ MonoBehaviour:
   rocket:
     serializedVersion: 2
     m_Bits: 0
-  hit: {fileID: 8300000, guid: 914af4d89f9d1954ab7f891ca4868e14, type: 3}
+  hit: {fileID: 8300000, guid: 2ea945c5bbeae9145beb4159521cb84b, type: 3}

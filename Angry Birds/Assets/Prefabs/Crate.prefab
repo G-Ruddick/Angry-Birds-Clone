@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3732936147013399136}
   - component: {fileID: 5936562411275466747}
   - component: {fileID: 3384276970962320160}
-  - component: {fileID: 906699663387526424}
+  - component: {fileID: 3983223163394848035}
   m_Layer: 7
   m_Name: Crate
   m_TagString: Untagged
@@ -137,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
---- !u!114 &906699663387526424
+--- !u!114 &3983223163394848035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,4 +156,4 @@ MonoBehaviour:
   rocket:
     serializedVersion: 2
     m_Bits: 0
-  hit: {fileID: 8300000, guid: 3316612825fbc41438ce2ca10666aca7, type: 3}
+  hit: {fileID: 8300000, guid: a470150162b861b49b5c8f0d771f653d, type: 3}

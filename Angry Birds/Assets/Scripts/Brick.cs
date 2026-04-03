@@ -7,12 +7,15 @@ public class Brick : MonoBehaviour
     public LayerMask cannonball;
     public LayerMask rocket;
 
+    public Transform cameraPos;
+
     public AudioClip hit;
 
     void Start()
     {
         cannonball = LayerMask.GetMask("cannonball");
         rocket = LayerMask.GetMask("rocket");
+        cameraPos = GameObject.Find("Main Camera").GetComponent<Transform>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -20,12 +23,12 @@ public class Brick : MonoBehaviour
         if (((1 << collision.gameObject.layer) & cannonball) != 0)
         {
             Health -= collision.gameObject.GetComponent<CannonBall>().Damage;
-            AudioSource.PlayClipAtPoint(hit, new Vector3(0, 0, 0));
+            AudioSource.PlayClipAtPoint(hit, cameraPos.position, .5f);
         }
         if (((1 << collision.gameObject.layer) & rocket) != 0)
         {
             Health -= collision.gameObject.GetComponent<Rocket>().Damage;
-            AudioSource.PlayClipAtPoint(hit, new Vector3(0, 0, 0));
+            AudioSource.PlayClipAtPoint(hit, cameraPos.position, .5f);
         }
     }
 
