@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
-{
+public class PauseMenu : MonoBehaviour {
     public static bool gamePause = false;
     public GameObject pauseMenu;
 
@@ -14,14 +13,15 @@ public class PauseMenu : MonoBehaviour
     void Awake() {
         sfxSlider.value = sfxVolume;
         musicSlider.value = musicVolume;
+        Resume();
     }
 
     void Update() {
         sfxVolume = sfxSlider.value;
         musicVolume = musicSlider.value;
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            Debug.Log("Pressed");
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace)) {
             if (gamePause) {
                 Resume();
             }
